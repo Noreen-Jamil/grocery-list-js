@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grocerry List</title>
+	<meta name="viewport" content="width=device-width , initial-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
+
+	<style>
+		*{
+			box-sizing: border-box;
+			margin:0;
+			padding:0;
+		}
+		body{
+			background: url("images/back-img.jpg") repeat ;
+			justify-content: center;
+			flex-direction: column;
+			overflow-x: hidden;
+
+		}
+		
+		main{
+			
+			width:600px;
+			margin:45px 0;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		
+		table{
+			width:600px;
+			background-color: #396c63;
+			box-shadow:2px 2px 2px #294840;
+			margin-bottom: 75px;
+		}
+		
+		th{
+			font-size: 20px;
+			color:#edda01;
+			font-family: 'ABeeZee', sans-serif;
+			padding:8px 0;
+			
+		}
+		td{
+			text-align: center;
+			font-size: 22px;
+			color:#F7F9F9;
+			letter-spacing: 1px;
+			border-bottom:2px solid #edda01;
+			padding-top:15px;
+		}
+		#delete i{
+			width:100%;
+		}
+		td:last-child{
+			width:80px;
+		}
+		td:last-child:hover i{
+			transform: scale(1.2);
+		}
+		header,body,main{
+			display: flex;
+			align-items: center;
+		}
+		header{
+			background-color: #396c63;
+			padding:20px 50px;
+			box-shadow: 1px 1px 2px #396c63,1px 1px 2px #edda01 ;
+			width:100%;
+		}
+		header>i{
+			font-size: 45px;
+			color:#edda01;
+			margin-right: 30px;
+		}
+		h1{
+			font-family: 'ABeeZee', sans-serif;
+			font-family: 'Lemonada', cursive;
+			color:#F7F9F9;
+			letter-spacing: 5px;
+			font-size: 35px;
+			text-transform: uppercase;
+			text-shadow: 2px 2px 2px #edda01;
+			
+		}
+		input,button{
+			outline:none;
+			border-radius: 2px;
+		}
+		input{
+			
+			padding:5px 10px;
+			font-size: 18px;
+			font-family: 'M PLUS 1p', sans-serif;
+			font-weight: 500;
+			border:none;
+			margin-right: 5%;
+		}
+		button{
+			padding:5px 8px;
+			background-color:#edda01;
+			color:#294840;/*dark green*/
+			border:2px solid #F7F9F9;
+		}
+		button:hover{
+			transform: scale(1.2);
+		}
+		i{
+			font-size: 20px;
+		}
+		footer{
+			height:60px;
+			width:100%;
+			/*position: fixed;
+			bottom:0;*/
+			background-color: #edda01;
+			border-top:1px solid #396c63;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 25px;
+		}
+		footer i{
+			font-size: 30px;
+		}
+		footer>i:first-child ,footer>i:last-child{
+			color:#6D736C;
+			font-size: 38px;
+		}
+		i:nth-child(2),i:nth-child(3),i:nth-child(4),i:nth-child(5),i:nth-child(6),i:nth-child(7){
+			position: absolute;
+			right:30px;
+			z-index:-1;
+			animation: itemAnim 10s linear infinite;
+		}
+		i:nth-child(2){
+			color:#DE0C12;
+			animation-delay: 1.5s;
+		}
+		i:nth-child(3){
+			color:green;
+			animation-delay: 3s;
+		}
+		i:nth-child(4){
+			color:yellow;
+			animation-delay: 4.5s;
+		}
+		i:nth-child(5){
+			color:#FFA500;
+			animation-delay: 6s;
+		}
+		i:nth-child(6){
+			color:#BA55D3;
+			animation-delay: 7.5s;
+		}
+		i:nth-child(7){
+			color:#926C10;
+			animation-delay: 9s;
+		}
+		@keyframes itemAnim{
+			0%{
+				right:110px;
+			}
+			10%{
+				right:298px;
+			}
+			20%{
+				right:447px
+			}
+			30%{
+				right:596px;
+			}
+			40%{
+				right:745px;
+			}
+			50%{
+				right:894px;
+			}
+			60%{
+				right:1043px;
+			}
+			70%{
+				right:1192px;
+			}
+			80%{
+				right:1300px;
+			}
+			90%{
+				right:1300px;
+			}
+			95%{
+				right:1300px;
+			}
+			100%{
+				right:1300px;
+			}
+
+		}
+		
+		@media only screen and (max-width: 768px){
+			h1{
+				font-size: 30px;
+			}
+			body{
+				align-items: center;
+			}
+			table{
+				width:90%;
+
+			}
+			main{
+				flex-direction: column;
+			}
+			input{
+				width:50%;
+				margin-bottom: 20px;
+				padding:5px;
+			}
+		}
+
+	</style>
+</head>
+<body>
+
+	<header>
+		<i class="fas fa-shopping-cart"></i>
+		<h1>Grocery List</h1>
+	</header>
+	<main>
+		<input type="text" name="item" id="grocery-item" maxlength="25">
+		<input type="text" name="quantity"  id="quantity" maxlength="10">
+		<button  onclick="addItem()"><i class="fas fa-plus"></i></button>
+	</main>
+	<footer>
+		
+		
+		<i class="fas fa-shopping-cart"></i> <!-- cart -->
+		<i class="fas fa-apple-alt"></i> <!-- apple -->
+		<i class="fas fa-pepper-hot"></i> <!-- pepper -->
+		<i class="fas fa-lemon"></i> <!-- lemon -->
+		<i class="fas fa-carrot"></i> <!-- carrot -->
+		<i class="fas fa-ice-cream"></i> <!-- ice cream -->
+		<i class="fas fa-pizza-slice"></i> <!-- pizza -->
+		
+		<i class="fas fa-store"></i> <!-- store -->
+
+	</footer>
+	<script src="script.js"></script>
+</body>
+</html>
