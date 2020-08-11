@@ -9,7 +9,6 @@ body{
 	justify-content: center;
 	flex-direction: column;
 	overflow-x: hidden;
-        Width:100vw;
 
 }
 		
@@ -114,16 +113,23 @@ header,body,main{
 			justify-content: space-between;
 			padding: 0 2% ;
 		}
+		footer>div{
+			width:100%;
+			position: relative;
+		}
 		footer i{
 			font-size: 30px;
 		}
-		footer>i:first-child ,footer>i:last-child{
+		footer i:last-child{
+			float:right;
+		}
+		footer i:first-child ,footer i:last-child{
 			color:#6D736C;
 			font-size: 38px;
 		}
 		i:nth-child(2),i:nth-child(3),i:nth-child(4),i:nth-child(5),i:nth-child(6),i:nth-child(7){
 			position: absolute;
-			right:30px;
+			right:1%;
 			z-index:-1;
 			animation: itemAnim 10s linear infinite;
 		}
@@ -153,13 +159,13 @@ header,body,main{
 		}
 		@keyframes itemAnim{
 			0%{
-				right:2%;
+				right:1%;
 			}
 			10%{
-				right:2%;
+				right:1%;
 			}
 			20%{
-				right:2%;
+				right:1%;
 			}
 			30%{
 				right:15%;
@@ -177,16 +183,16 @@ header,body,main{
 				right:75%;
 			}
 			80%{
-				right:95%;
+				right:97%;
 			}
 			90%{
-				right:95%;
+				right:97%;
 			}
 			95%{
-				right:95%;
+				right:97%;
 			}
 			100%{
-				right:95%;
+				right:97%;
 			}
 
 		}
@@ -209,5 +215,16 @@ header,body,main{
 				width:50%;
 				margin-bottom: 20px;
 				padding:5px;
+				margin-right: 0;
+			}
+			header{
+				padding-right: 0;
+				padding-left: 10px;
+			}
+			header h1 {
+				font-size: 25px;
+			}
+			header i{
+				font-size: 30px;
 			}
 		}
