@@ -8,7 +8,7 @@ body{
 	background: url("images/back-img.jpg") repeat ;
 	justify-content: center;
 	flex-direction: column;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 
 }
 		
@@ -88,6 +88,11 @@ header,body,main{
 			font-weight: 500;
 			border:none;
 			margin-right: 5%;
+		}
+		input::placeholder{
+			font-size: 14px;
+			color:lightgray;
+			font-style: italic;
 		}
 		button{
 			padding:5px 8px;
@@ -210,6 +215,7 @@ header,body,main{
 			}
 			main{
 				flex-direction: column;
+				width:90%;
 			}
 			input{
 				width:50%;
@@ -217,6 +223,7 @@ header,body,main{
 				padding:5px;
 				margin-right: 0;
 			}
+			
 			header{
 				padding-right: 0;
 				padding-left: 10px;
