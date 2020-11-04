@@ -111,7 +111,7 @@ header,body,main{
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding: 0 2% ;
+			padding: 0 1% ;
 		}
 		footer>div{
 			width:100%;
